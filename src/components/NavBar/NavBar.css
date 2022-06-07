@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Quicksand:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    padding: 20px;
+    background-image: linear-gradient(225deg, #75a4ff 0, #1e7ef3 50%, #005bd5 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav h1 {
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 34px;
+    color: aliceblue;
+    text-shadow: 3px 3px 3px rgb(69, 69, 69);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    list-style: none;
+    padding: 5px;
+}
+
+nav li a {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(176, 34, 34);
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgb(69, 69, 69);
+    margin-top: 5px;
+    transition: all 0.3s linear 0s;
+}
+
+nav li a:hover {
+    border-radius: 5px;
+    background-color: rgb(249, 4, 4);
+    box-shadow: 2px 2px 2px 1px rgb(69, 69, 69);
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 486px) {
+    nav {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    nav ul {
+        justify-content: center;
+    }
+    nav h1 {
+        text-align: center;
+    }
+}
