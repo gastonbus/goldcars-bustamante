@@ -5,16 +5,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 nav {
-    padding: 20px;
+    display: grid;
+    grid-template-columns: auto 100px;
     background-image: linear-gradient(225deg, #75a4ff 0, #1e7ef3 50%, #005bd5 100%);
+}
+
+nav div:first-child {
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-nav h1 {
+nav div:first-child h1 {
     padding: 10px;
     font-family: 'Quicksand', sans-serif;
     font-size: 34px;
@@ -22,17 +26,17 @@ nav h1 {
     text-shadow: 3px 3px 3px rgb(69, 69, 69);
 }
 
-nav ul {
+nav div:first-child ul {
     display: flex;
     flex-wrap: wrap;
 }
 
-nav li {
+nav div:first-child li {
     list-style: none;
     padding: 5px;
 }
 
-nav li a {
+nav div:first-child li a {
     display: inline-block;
     padding: 10px;
     border-radius: 5px;
@@ -46,24 +50,32 @@ nav li a {
     transition: all 0.3s linear 0s;
 }
 
-nav li a:hover {
+nav div:first-child li a:hover {
     border-radius: 5px;
     background-color: rgb(249, 4, 4);
     box-shadow: 2px 2px 2px 1px rgb(69, 69, 69);
     font-weight: bolder;
 }
 
-@media screen and (max-width: 486px) {
-    nav {
+@media screen and (max-width: 545px) {
+    nav div:first-child{
         justify-content: center;
     }
 }
 
 @media screen and (max-width: 310px) {
-    nav ul {
+    nav div:first-child ul {
         justify-content: center;
     }
-    nav h1 {
+    nav div:first-child h1 {
         text-align: center;
     }
 }
+
+.cartIconContainer {
+    background-color: rgb(33, 100, 255);
+
+}
+
+
+
