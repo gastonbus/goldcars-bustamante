@@ -1,12 +1,12 @@
 nav .cartIcon {
-    vertical-align: middle;
-    position: absolute;
+    display: inline-block;
     color:white;
-
 }
 
 nav .quantity {
-    position: absolute;
+    display: inline-block;
+    position: relative;
+    bottom: 1.3em;
     color: white;
     font-weight: bold;
 }

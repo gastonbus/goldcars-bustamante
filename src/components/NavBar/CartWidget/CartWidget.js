@@ -7,7 +7,7 @@ export const CartWidget = () => {
     <IconContext.Provider value={{ size:"2em" }}>
         <div className="cartIconContainer">
             <BsCartFill className='cartIcon'/>    
-            <span className='quantity'>0</span>
+            <span className='quantity'>12</span>
         </div>
     </IconContext.Provider> 
     )    

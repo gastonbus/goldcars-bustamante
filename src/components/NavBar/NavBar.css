@@ -7,7 +7,7 @@
 }
 nav {
     display: grid;
-    grid-template-columns: auto 100px;
+    grid-template-columns: auto 120px;
     background-image: linear-gradient(225deg, #75a4ff 0, #1e7ef3 50%, #005bd5 100%);
 }
 
@@ -57,13 +57,13 @@ nav div:first-child li a:hover {
     font-weight: bolder;
 }
 
-@media screen and (max-width: 545px) {
+@media screen and (max-width: 610px) {
     nav div:first-child{
         justify-content: center;
     }
 }
 
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 435px) {
     nav div:first-child ul {
         justify-content: center;
     }
@@ -73,7 +73,10 @@ nav div:first-child li a:hover {
 }
 
 .cartIconContainer {
-    background-color: rgb(33, 100, 255);
+    background-color: rgb(176, 34, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
