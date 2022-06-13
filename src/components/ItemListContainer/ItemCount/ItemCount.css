@@ -1,0 +1,25 @@
+.itemCounterContainer {
+    background: rgb(196,196,196);
+    background: linear-gradient(0deg, rgba(196,196,196,1) 0%, rgba(223,223,223,1) 32%, rgba(255,255,255,1) 100%);    width: 8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2em;
+}
+
+#itemRemoveButton, #itemAddButton {
+    height: 2em;
+    width: 2em;
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+}
+
+.itemCounter {
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+
+}

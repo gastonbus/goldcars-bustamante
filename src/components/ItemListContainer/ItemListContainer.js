@@ -1,8 +1,11 @@
 import "./ItemListContainer.css";
+import { ItemCount } from "./ItemCount/ItemCount";
 
-export const ItemListContainer = (props) => {
-    const { text } = props;
+export const ItemListContainer = ({ text }) => {
     return (
-    <p>{ text }</p>
+        <>
+            <p>{ text }</p>
+            <ItemCount stock="10" initial={2} />
+        </>
     )
 }
