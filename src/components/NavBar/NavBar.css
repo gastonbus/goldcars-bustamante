@@ -41,7 +41,7 @@ nav div:first-child li a {
     display: inline-block;
     padding: 10px;
     border-radius: 5px;
-    background-color: rgb(176, 34, 34);
+    background-color: #b02222;
     text-decoration: none;
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
@@ -53,7 +53,7 @@ nav div:first-child li a {
 
 nav div:first-child li a:hover {
     border-radius: 5px;
-    background-color: rgb(249, 4, 4);
+    background-color: #f90404;
     box-shadow: 2px 2px 2px 1px rgb(69, 69, 69);
     font-weight: bolder;
 }

@@ -1,4 +1,7 @@
-p {
+#listContainerText {
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }

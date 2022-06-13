@@ -3,9 +3,9 @@ import { ItemCount } from "./ItemCount/ItemCount";
 
 export const ItemListContainer = ({ text }) => {
     return (
-        <>
-            <p>{ text }</p>
-            <ItemCount stock="10" initial={2} />
-        </>
+        <div id="itemsContainer">
+            <p id="listContainerText">{ text }</p>
+            <ItemCount stock="8" initial={1} />
+        </div>
     )
 }

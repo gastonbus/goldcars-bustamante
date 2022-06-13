@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer text="Próximamente listado de productos"/>
+      <ItemListContainer text="Lista de productos"/>
     </>
   );
 }

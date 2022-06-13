@@ -1,25 +1,64 @@
+#itemContainer {
+    background: linear-gradient(160deg, #ffffff 50%, #75a4ff 50%);
+    border: 1px solid #bbb;
+    border-radius: 2em;
+    margin: 15px;
+}
+
+#itemName {
+    display: block;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .itemCounterContainer {
     background: rgb(196,196,196);
     background: linear-gradient(0deg, rgba(196,196,196,1) 0%, rgba(223,223,223,1) 32%, rgba(255,255,255,1) 100%);    width: 8em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 2em;
+    border-radius: 1em;
+    margin: auto;
+    box-shadow: 0px 3px 3px gray;
 }
 
 #itemRemoveButton, #itemAddButton {
-    height: 2em;
+    height: 1.4em;
     width: 2em;
     color: black;
     font-size: 1.5em;
     font-weight: bold;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
+
 
 .itemCounter {
     color: black;
     font-size: 1.5em;
     font-weight: bold;
+}
 
+.addToCartButton {
+    display: flex;
+    justify-content: center;
+}
+
+#addToCartButton {
+    display: block;
+    margin: 1em auto;
+    height: 2em;
+    width: 8em;
+    background-color: #b02222;
+    border-radius: 1em;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 3px 3px gray;
 }

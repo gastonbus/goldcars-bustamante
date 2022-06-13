@@ -1,6 +1,7 @@
 nav .cartIcon {
     display: inline-block;
     color:white;
+    text-shadow: 2px 2px 2px #555;
 }
 
 nav .quantity {
@@ -9,4 +10,5 @@ nav .quantity {
     bottom: 1.3em;
     color: white;
     font-weight: bold;
+    text-shadow: 2px 2px 2px #333;
 }
