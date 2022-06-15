@@ -1,0 +1,22 @@
+#productImage {
+    width: 100%;
+}
+
+#itemContainer {
+    background: linear-gradient(160deg, #ffffff 50%, #75a4ff 50%);
+    border: 1px solid #bbb;
+    border-radius: 2em;
+    margin: 15px;
+    width: 10em;
+    height: 15em;
+}
+
+#itemName {
+    display: block;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
