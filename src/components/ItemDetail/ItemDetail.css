@@ -1,0 +1,20 @@
+#itemDetailContainer {
+    background-color: bisque;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#itemDetailImage {
+    width: 100%;
+}
+
+#itemDetailContainer div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#itemDetailContainer div:nth-child(1) {
+    justify-content: center;
+    
+}

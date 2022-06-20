@@ -7,8 +7,9 @@
     border: 1px solid #bbb;
     border-radius: 2em;
     margin: 15px;
-    width: 10em;
-    height: 15em;
+    width: 12em;
+    height: 18em;
+    text-align: center;
 }
 
 #itemName {
@@ -19,4 +20,8 @@
     font-size: 1.5em;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+#itemPrice, #itemStock {
+    margin: 0px 10px;
 }

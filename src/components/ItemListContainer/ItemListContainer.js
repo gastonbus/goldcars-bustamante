@@ -1,22 +1,26 @@
 import "./ItemListContainer.css";
 // import { ItemCount } from "../ItemCount/ItemCount";
 import { useEffect, useState } from "react";
-import productsPromise from "../../utils/productsPromise";
-import products from "../../utils/products";
+import itemsPromise from "../../utils/itemsPromise";
+import itemsArray from "../../utils/items";
 import { ItemList } from "../ItemList/ItemList";
 
 export const ItemListContainer = ({ text }) => {
+    
     const [items, setItems] = useState([]);
+
     useEffect(() => {
-            productsPromise(products)
-            .then(response => setItems(response))
-    }, []);
+            itemsPromise(itemsArray)
+            .then(data => 
+                setItems(data))
+    }, [])
+
     return (
-        <div id="itemsContainer">
-            <ItemList products={ items } />
+        <section id="itemsContainer">
+            <ItemList items={ items } />
             {/*Descomentar cuando sea el momento:
             <p id="listContainerText">{ text }</p>
             <ItemCount stock="8" initial={1} /> */}
-        </div>
+        </section>
     )
 }
