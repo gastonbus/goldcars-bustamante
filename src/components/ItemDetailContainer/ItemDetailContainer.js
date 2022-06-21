@@ -8,19 +8,17 @@ import "./ItemDetailContainer.css";
 export const ItemDetailContainer = () => {
     const { itemId } = useParams();
 
-    const [item, setItem] = useState({});
+    const [item, setItem] = useState();
 
     useEffect(() => {
         itemsPromise(itemsArray)
-            .then(data => {
-                setItem(data.find(item => item.id === itemId));
-            }
+            .then(data => setItem(data.find(item => item.id === itemId))
         );
     }, [itemId]);
 
     return (
         <section>
-            <ItemDetail item={item} />
+            { item ? <ItemDetail item={ item } /> : <div className="spinner"></div> }
         </section>
     );
 };

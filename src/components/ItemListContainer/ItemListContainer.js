@@ -1,26 +1,37 @@
 import "./ItemListContainer.css";
-// import { ItemCount } from "../ItemCount/ItemCount";
 import { useEffect, useState } from "react";
-import itemsPromise from "../../utils/itemsPromise";
+import getItems from "../../utils/itemsPromise";
 import itemsArray from "../../utils/items";
 import { ItemList } from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
 export const ItemListContainer = ({ text }) => {
-    
+    let { categoryId } = useParams();
+
+    if (categoryId === undefined) {
+        categoryId = "all";
+    }
+
     const [items, setItems] = useState([]);
 
+    
     useEffect(() => {
-            itemsPromise(itemsArray)
-            .then(data => 
-                setItems(data))
-    }, [])
+        const filterItems = (items) => {
+            return categoryId !== "all" ? items.filter(item => item.category === categoryId) : items
+        }
+        getItems(itemsArray)
+        .then(data => setItems(filterItems(data)))
+        .catch(error => console.log(error))
+    }, [categoryId])
+
+
 
     return (
         <section id="itemsContainer">
-            <ItemList items={ items } />
+            { items.length > 0 ? <ItemList items={ items } /> : <div className="spinner"></div> }
             {/*Descomentar cuando sea el momento:
             <p id="listContainerText">{ text }</p>
-            <ItemCount stock="8" initial={1} /> */}
+             */}
         </section>
     )
 }

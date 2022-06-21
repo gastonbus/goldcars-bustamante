@@ -11,13 +11,13 @@ export const NavBar = () => {
                 </h1>
                 <ul>
                     <li>
-                        <Link to="/#">Deluxe</Link>
+                        <Link to="/category/deluxe">Deluxe</Link>
                     </li>
                     <li>
-                        <Link to="/#">Sport</Link>
+                        <Link to="/category/sport">Sport</Link>
                     </li>
                     <li>
-                        <Link to="/#">Family</Link>
+                        <Link to="/category/family">Family</Link>
                     </li>
                 </ul>
             </div>

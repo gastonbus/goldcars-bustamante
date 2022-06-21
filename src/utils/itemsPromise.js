@@ -1,9 +1,13 @@
-const itemsPromise = (itemsArray) => {
-    return new Promise((resolve) => {
+const getItems = (itemsArray) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(itemsArray);
+            if (itemsArray.length > 0) {
+                resolve(itemsArray);
+            } else {
+                reject("Error al obtener los datos")
+            }
         }, 2000)
     })
 }
 
-export default itemsPromise;
+export default getItems;

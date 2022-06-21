@@ -1,25 +1,22 @@
 #productImage {
-    width: 100%;
+    width: 240px;
 }
 
 #itemContainer {
-    background: linear-gradient(160deg, #ffffff 50%, #75a4ff 50%);
+    background: linear-gradient(160deg, #ffffff 40%, #75a4ff 60%);
     border: 1px solid #bbb;
     border-radius: 2em;
     margin: 15px;
-    width: 12em;
-    height: 18em;
     text-align: center;
 }
 
 #itemName {
     display: block;
-    text-align: center;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 1.5em;
-    margin-top: 15px;
-    margin-bottom: 15px;
+
+
 }
 
 #itemPrice, #itemStock {

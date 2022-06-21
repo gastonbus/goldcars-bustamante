@@ -19,12 +19,14 @@ nav div:first-child {
     justify-content: space-between;
 }
 
-nav div:first-child h1 {
+nav div:first-child a {
+    display: block;
     padding: 10px;
     font-family: 'Quicksand', sans-serif;
     font-size: 34px;
     color: aliceblue;
     text-shadow: 3px 3px 3px rgb(69, 69, 69);
+    text-decoration: none;
 }
 
 nav div:first-child ul {
