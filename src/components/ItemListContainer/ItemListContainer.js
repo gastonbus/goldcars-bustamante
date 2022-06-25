@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import getItems from "../../utils/itemsPromise";
 import itemsArray from "../../utils/items";
 import { ItemList } from "../ItemList/ItemList";
+import { Spinner } from "../Spinner/Spinner";
 import { useParams } from "react-router-dom";
 
 export const ItemListContainer = ({ text }) => {
@@ -28,7 +29,7 @@ export const ItemListContainer = ({ text }) => {
 
     return (
         <section id="itemsContainer">
-            { items.length > 0 ? <ItemList items={ items } /> : <div className="spinner"></div> }
+            { items.length > 0 ? <ItemList items={ items } /> : <Spinner /> }
             {/*Descomentar cuando sea el momento:
             <p id="listContainerText">{ text }</p>
              */}

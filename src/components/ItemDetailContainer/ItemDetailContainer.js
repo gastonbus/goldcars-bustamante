@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import itemsPromise from "../../utils/itemsPromise";
 import itemsArray from "../../utils/items";
+import { Spinner } from "../Spinner/Spinner";
 import { useParams } from "react-router-dom";
 import "./ItemDetailContainer.css";
 
@@ -18,7 +19,7 @@ export const ItemDetailContainer = () => {
 
     return (
         <section>
-            { item ? <ItemDetail item={ item } /> : <div className="spinner"></div> }
+            { item ? <ItemDetail item={ item } /> : <Spinner /> }
         </section>
     );
 };

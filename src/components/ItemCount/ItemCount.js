@@ -37,14 +37,14 @@ export const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     return (
-        <>
-            <div className="itemCounterContainer">
+        <div id="itemCounterContainer">
+            <div>
                 <button id="itemRemoveButton" onClick={() => handleCount("remove")}>-</button>
-                <span className="itemCounter">{count}</span>
+                <span id="itemCounter">{count}</span>
                 <button id="itemAddButton" onClick={() => handleCount("add")}>+</button>
             </div>
-            <button id="addToCartButton" onClick={() => addToCart({count})}>Add to Cart</button>
-        </>
+                <button id="addToCartButton" onClick={() => addToCart({count})}>Add to Cart</button>
+        </div>
 
     )
 }
