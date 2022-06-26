@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import "./ItemCount.css"
 
-export const ItemCount = ({stock, initial, onAdd}) => {
+export const ItemCount = ({stock, initial, changeIsAddToCartButtonPressed}) => {
 
     const [count, setCount] = useState(initial);
 
@@ -31,9 +31,9 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         }
     }
 
-    // Modificar esta funcion en el desafio correspondiente para hacer que se agregue la cantidad al carrito
     const addToCart = (quantity) => {
-        alert(`Se agregaron ${quantity.count} ítems al carrito`);
+        // Aca van las acciones necesarias para incrementar la cantidad de items a comprar en el CartWidget
+        changeIsAddToCartButtonPressed(true);
     }
 
     return (

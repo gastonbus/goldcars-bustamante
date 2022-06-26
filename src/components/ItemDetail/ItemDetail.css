@@ -49,23 +49,17 @@
 
 }
 
-/* @media screen and (max-width: 745px) {
-
-    #itemDetailContainer div:nth-child(2) {
-        display: flex;
-        max-width: 435px;
-        align-items: center;
-    }
-
-    #itemDetailDescription {
-        text-align: justify;
-    }
-
-    #itemDetailTitle, #itemDetailPrice {
-        text-align: center;
-    }
-
-    #itemDetailImage {
-        width: 310px;
-    }
-} */
+#checkoutButton {
+    height: 24px;
+    padding-left: 0.5em;
+    padding-right: 0.8em;
+    background-color: #b02222;
+    background: linear-gradient(0deg, #b02222 0%, #ca2626 32%, #e62c2c 100%);
+    border-radius: 1em;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+    font-weight: bol;
+    white-space: nowrap;
+}

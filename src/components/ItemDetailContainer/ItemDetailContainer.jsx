@@ -11,6 +11,10 @@ export const ItemDetailContainer = () => {
 
     const [item, setItem] = useState();
 
+    const [isAddToCartButtonPressed, setIsAddToCartButtonPressed] = useState(false);
+
+    const handleIsAddToCartButtonPressed = (value) => setIsAddToCartButtonPressed(value);
+
     useEffect(() => {
         itemsPromise(itemsArray)
             .then(data => setItem(data.find(item => item.id === itemId))
@@ -19,7 +23,7 @@ export const ItemDetailContainer = () => {
 
     return (
         <section>
-            { item ? <ItemDetail item={ item } /> : <Spinner /> }
+            { item ? <ItemDetail item={item} isAddToCartButtonPressed={isAddToCartButtonPressed} changeIsAddToCartButtonPressed={handleIsAddToCartButtonPressed}/> : <Spinner /> }
         </section>
     );
 };

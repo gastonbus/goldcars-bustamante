@@ -1,7 +1,7 @@
 #itemCounterContainer {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center; 
 }
 
@@ -42,7 +42,7 @@
     padding-right: 0.8em;
     background-color: #b02222;
     background: linear-gradient(0deg, #b02222 0%, #ca2626 32%, #e62c2c 100%);
-   border-top-right-radius: 1em;
+    border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
     color: white;
     cursor: pointer;
