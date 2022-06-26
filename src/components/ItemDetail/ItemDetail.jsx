@@ -1,6 +1,8 @@
+import React from "react";
 import "./ItemDetail.css";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
+
 
 export const ItemDetail = ({ item, isAddToCartButtonPressed, changeIsAddToCartButtonPressed }) => {
     const navigate = useNavigate();

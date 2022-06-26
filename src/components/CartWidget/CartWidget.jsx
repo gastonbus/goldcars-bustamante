@@ -1,3 +1,4 @@
+import React from "react";
 import { BsCartFill } from 'react-icons/bs';
 import { IconContext } from "react-icons";
 import "./CartWidget.css"; 
