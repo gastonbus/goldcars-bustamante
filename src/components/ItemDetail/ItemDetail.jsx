@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ItemDetail.css";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
 
 
-export const ItemDetail = ({ item, isAddToCartButtonPressed, changeIsAddToCartButtonPressed }) => {
+export const ItemDetail = ({ item }) => {
     const navigate = useNavigate();
 
+    const [quantity, setQuantity] = useState(0);
+
+    const [isCheckoutButtonVisible, setIsCheckoutButtonVisible] = useState(false);
+
+    const onAdd = (quantityToAdd) => {
+        setQuantity(quantityToAdd);
+        setIsCheckoutButtonVisible(true);
+        console.log(quantityToAdd);
+    }
+    
     return (
         <article id="itemDetailContainer">
             <div>
@@ -16,9 +26,9 @@ export const ItemDetail = ({ item, isAddToCartButtonPressed, changeIsAddToCartBu
             <h1 id="itemDetailTitle">{item.name}</h1>
             <p id="itemDetailPrice">Price: U$S {item.price}</p>
 
-            {isAddToCartButtonPressed ? 
+            {isCheckoutButtonVisible ? 
             <button id="checkoutButton" onClick={() => navigate("/cart", { replace: false })}>Checkout</button> :
-            <ItemCount stock={item.stock} initial={1} changeIsAddToCartButtonPressed={changeIsAddToCartButtonPressed}/> }
+            <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/> }
        
             <p id="itemDetailDescription">{item.description}</p>
             </div>
