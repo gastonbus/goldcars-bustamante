@@ -1,20 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./ItemDetail.css";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../CartContext/CartContext";
 
 
 export const ItemDetail = ({ item }) => {
     const navigate = useNavigate();
 
-    const [quantity, setQuantity] = useState(0);
+    // const [quantity, setQuantity] = useState(0);
 
     const [isCheckoutButtonVisible, setIsCheckoutButtonVisible] = useState(false);
 
+    const {addItemToCart} = useContext(CartContext);
+
     const onAdd = (quantityToAdd) => {
-        setQuantity(quantityToAdd);
+        console.log("QuantityToAdd = ", quantityToAdd);
+        // console.log(addItemToCart);
+        addItemToCart({item, quantityToAdd});
         setIsCheckoutButtonVisible(true);
-        console.log(quantityToAdd);
     }
     
     return (

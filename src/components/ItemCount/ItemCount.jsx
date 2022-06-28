@@ -30,6 +30,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
                 setCount(count - 1);
             }
         }
+        // console.log(count);
     }
 
     return (
@@ -39,7 +40,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
                 <span id="itemCounter">{count}</span>
                 <button id="itemAddButton" onClick={() => handleCount("add")}>+</button>
             </div>
-            <button id="addToCartButton" onClick={() => onAdd({count})}>Add to Cart</button>
+            <button id="addToCartButton" onClick={() => onAdd(count)}>Add to Cart</button>
         </div>
     )
 }
