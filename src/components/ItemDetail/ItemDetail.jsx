@@ -5,20 +5,22 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
 
-export const ItemDetail = ({ item }) => {
+export const ItemDetail = ( {item} ) => {
     const navigate = useNavigate();
 
-    const [quantity, setQuantity] = useState(0);
+    // const [quantity, setQuantity] = useState(0);
 
     const [isCheckoutButtonVisible, setIsCheckoutButtonVisible] = useState(false);
 
     const {addItemToCart} = useContext(CartContext);
 
     const onAdd = (quantityToAdd) => {
-        setQuantity(quantityToAdd);
-        addItemToCart({item, quantity});
+        // setQuantity(quantityToAdd);
+        addItemToCart({item, quantity: quantityToAdd});
+        // console.log(quantity);
         setIsCheckoutButtonVisible(true);
     }
+    // console.log(quantity);
 
     return (
         <article id="itemDetailContainer">

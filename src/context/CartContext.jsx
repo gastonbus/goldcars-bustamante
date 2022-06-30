@@ -7,33 +7,31 @@ export const CartContextProvider = ({children}) => {
     const [itemsInCart, setItemsInCart] = useState([]);
     
     const isInCart = (itemId) => {
-        //logica para saber si un item esta en el Cart
-        return itemsInCart.some(item => item.id === itemId);
+        return itemsInCart.some(itemInCart => itemInCart.item.id === itemId);
     }
 
-    const addItemToCart = (itemToAdd) => {
-        //Logica para agregar 1 item al Cart
-        console.log(itemToAdd);
-        if(isInCart(itemToAdd.id)) {
+    /* IMPORTANTE: itemsInCart e itemToAdd tienen la forma {item:{...}, quantity: 1} */
+
+    const addItemToCart = (itemToAdd) => { 
+        //Logica para saber si un item esta en el Cart    
+        if(isInCart(itemToAdd.item.id)) {
             //Logica que actualiza la cantidad del item existente
+            const updatedItemsInCart = itemsInCart.map(itemInCart => {
+                if (itemInCart.item.id === itemToAdd.item.id) {
+                    itemInCart.quantity += itemToAdd.quantity;
+                }
+                return itemInCart;
+            })
             console.log("El item ya se encuentra en el carrito");
-            console.log(itemsInCart);
-            setItemsInCart(itemsInCart.map(item => item.id === itemToAdd.item.id ? item.quantity = item.quantity + itemToAdd.quantity : item.quantity = item.quantity));          
+            console.log(updatedItemsInCart);          
         } else {
             //Logica que agrega el item
-            setItemsInCart([...itemsInCart, itemToAdd]);     
+            setItemsInCart([...itemsInCart, itemToAdd]);
         }
     }
 
     const removeItemFromCart = (itemId) => {
-        //logica para remover 1 item del Cart
-
-        //Opcion 1:
-        // const position = itemsInCart.map(item => item.id).indexOf(itemId);
-        // itemsInCart.splice(position, 1);
-
-        //Opcion 2:
-        setItemsInCart(itemsInCart.filter(item => item.id !== itemId));
+        setItemsInCart(itemsInCart.filter(itemInCart => itemInCart.item.id !== itemId));
     } 
 
     const clearCart = () => {
