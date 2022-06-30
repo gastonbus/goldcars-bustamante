@@ -7,6 +7,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
     const [count, setCount] = useState(initial);
 
     const handleCount = (action) => {
+
         if (action === "add") {
             if (count === stock - 1) {
                 document.getElementById("itemAddButton").style.color = "#bbbbbb";                
@@ -29,10 +30,9 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
             if (count > 0) {
                 setCount(count - 1);
             }
-        }
-        // console.log(count);
+        }       
     }
-
+    
     return (
         <div id="itemCounterContainer">
             <div>

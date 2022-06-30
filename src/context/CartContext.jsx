@@ -14,9 +14,15 @@ export const CartContextProvider = ({children}) => {
     const addItemToCart = (itemToAdd) => {
         //Logica para agregar 1 item al Cart
         console.log(itemToAdd);
-        console.log(itemsInCart);
-        setItemsInCart([...itemsInCart, itemToAdd]);
-        console.log(itemsInCart);       
+        if(isInCart(itemToAdd.id)) {
+            //Logica que actualiza la cantidad del item existente
+            console.log("El item ya se encuentra en el carrito");
+            console.log(itemsInCart);
+            setItemsInCart(itemsInCart.map(item => item.id === itemToAdd.item.id ? item.quantity = item.quantity + itemToAdd.quantity : item.quantity = item.quantity));          
+        } else {
+            //Logica que agrega el item
+            setItemsInCart([...itemsInCart, itemToAdd]);     
+        }
     }
 
     const removeItemFromCart = (itemId) => {
