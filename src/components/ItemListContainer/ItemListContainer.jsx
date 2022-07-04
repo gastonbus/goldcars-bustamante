@@ -15,7 +15,6 @@ export const ItemListContainer = ({ text }) => {
     }
 
     const [items, setItems] = useState([]);
-
     
     useEffect(() => {
         const filterItems = (items) => {
@@ -25,8 +24,6 @@ export const ItemListContainer = ({ text }) => {
         .then(data => setItems(filterItems(data)))
         .catch(error => console.log(error))
     }, [categoryId])
-
-
 
     return (
         <section id="itemsContainer">

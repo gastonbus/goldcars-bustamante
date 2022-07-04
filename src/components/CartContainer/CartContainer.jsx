@@ -1,9 +1,12 @@
 import React from "react"
+import { Cart } from "../Cart/Cart"
+import { EmptyCart } from "../EmptyCart/EmptyCart"
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
 export const CartContainer = () => {
-    return (
-        <div>
 
-        </div>
-    )
+    const { purchaseCart } = useContext(CartContext);
+
+    return (purchaseCart.length > 0) ? <Cart /> : <EmptyCart />
 }
