@@ -15,6 +15,7 @@ export const Cart = () => {
                     <td>Quantity</td>
                     <td>Item price</td>
                     <td>Total</td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
@@ -32,10 +33,13 @@ export const Cart = () => {
                 <tr>
                     <td colSpan="3">Purchase Total</td>
                     <td>U$S {purchaseCart.reduce((accum, currentValue) => accum + currentValue.item.price * currentValue.quantity, 0)}</td>
-                    <td colSpan="4"><button onClick={() => {
+                    <td colSpan="4">
+                        <button onClick={() => {navigate("/", { replace: false })}}>Add items</button>
+                        <button onClick={() => {
                         clearCart();
                         navigate("/cart", { replace: false })
-                    }}>Empty Cart</button></td>
+                        }}>Empty Cart</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

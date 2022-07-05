@@ -8,19 +8,14 @@ import { CartContext } from "../../context/CartContext";
 export const ItemDetail = ( {item} ) => {
     const navigate = useNavigate();
 
-    // const [quantity, setQuantity] = useState(0);
-
-    const [isCheckoutButtonVisible, setIsCheckoutButtonVisible] = useState(false);
+    const [quantity, setQuantity] = useState(0);
 
     const {addItemToCart} = useContext(CartContext);
 
     const onAdd = (quantityToAdd) => {
-        // setQuantity(quantityToAdd);
+        setQuantity(quantityToAdd);
         addItemToCart({item, quantity: quantityToAdd});
-        // console.log(quantity);
-        setIsCheckoutButtonVisible(true);
     }
-    // console.log(quantity);
 
     return (
         <article id="itemDetailContainer">
@@ -31,7 +26,7 @@ export const ItemDetail = ( {item} ) => {
             <h1 id="itemDetailTitle">{item.name}</h1>
             <p id="itemDetailPrice">Price: U$S {item.price}</p>
 
-            {isCheckoutButtonVisible ? 
+            {quantity > 0 ? 
             <button id="checkoutButton" onClick={() => navigate("/cart", { replace: false })}>Checkout</button> :
             <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/> }
        
