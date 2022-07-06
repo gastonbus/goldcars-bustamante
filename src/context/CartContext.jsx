@@ -16,12 +16,13 @@ export const CartContextProvider = ({children}) => {
     const addItemToCart = (itemToAdd) => {   
         if(isInCart(itemToAdd.item.id)) {
             //Actualiza la cantidad del item existente
-            purchaseCart.map(itemInCart => {
+            setItemsInCart(purchaseCart.map(itemInCart => {
                 if (itemInCart.item.id === itemToAdd.item.id) {
                     itemInCart.quantity += itemToAdd.quantity;
                 }
                 return itemInCart;
-            })         
+                })     
+            ) 
         } else {
             //Agrega el item
             setItemsInCart([...purchaseCart, itemToAdd]);
