@@ -21,7 +21,7 @@ export const Cart = () => {
             <tbody>
                 {purchaseCart.map(itemInCart => {
                     return (
-                        <tr key={itemInCart.item.id}>
+                        <tr key={itemInCart.id}>
                             <td>{itemInCart.item.name}</td>
                             <td>{itemInCart.quantity}</td>
                             <td>U$S {itemInCart.item.price}</td>

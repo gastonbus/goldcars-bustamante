@@ -6,6 +6,7 @@ import { CartContext } from "../../context/CartContext";
 
 
 export const ItemDetail = ( {item} ) => {
+
     const navigate = useNavigate();
 
     const [quantity, setQuantity] = useState(0);
@@ -14,23 +15,34 @@ export const ItemDetail = ( {item} ) => {
 
     const onAdd = (quantityToAdd) => {
         setQuantity(quantityToAdd);
-        addItemToCart({item, quantity: quantityToAdd});
+        addItemToCart({
+            id: item.id, 
+            item: {
+                category: item.item.category,
+                description: item.item.description,
+                image: item.item.image,
+                name: item.item.name,
+                price: item.item.price,
+                stock: item.item.stock,
+            }, 
+            quantity: quantityToAdd
+        });
     }
 
     return (
         <article id="itemDetailContainer">
             <div>
-            <img src={item.image} alt={item.name} id="itemDetailImage"/>
+            <img src={item.item.image} alt={item.item.name} id="itemDetailImage"/>
             </div>
             <div>
-            <h1 id="itemDetailTitle">{item.name}</h1>
-            <p id="itemDetailPrice">Price: U$S {item.price}</p>
+            <h1 id="itemDetailTitle">{item.item.name}</h1>
+            <p id="itemDetailPrice">Price: U$S {item.item.price}</p>
 
             {quantity > 0 ? 
             <button id="checkoutButton" onClick={() => navigate("/cart", { replace: false })}>Checkout</button> :
-            <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/> }
+            <ItemCount stock={item.item.stock} initial={1} onAdd={onAdd}/> }
        
-            <p id="itemDetailDescription">{item.description}</p>
+            <p id="itemDetailDescription">{item.item.description}</p>
             </div>
         </article>
     );
