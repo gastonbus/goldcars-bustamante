@@ -2,7 +2,7 @@ import React from "react";
 import { BsCartFill } from 'react-icons/bs';
 import { IconContext } from "react-icons";
 import "./CartWidget.css"; 
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 

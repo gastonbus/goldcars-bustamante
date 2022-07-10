@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import { useNavigate } from "react-router-dom";
 
 export const Cart = () => {
@@ -26,7 +26,7 @@ export const Cart = () => {
                             <td>{itemInCart.quantity}</td>
                             <td>U$S {itemInCart.item.price}</td>
                             <td>U$S {itemInCart.item.price * itemInCart.quantity}</td>
-                            <td><button onClick={() => removeItemFromCart(itemInCart.item.id)}>Remove</button></td>
+                            <td><button onClick={() => removeItemFromCart(itemInCart.id)}>Remove</button></td>
                         </tr>
                     )                   
                 })}                
