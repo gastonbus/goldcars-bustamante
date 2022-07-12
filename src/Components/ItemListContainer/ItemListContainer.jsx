@@ -20,21 +20,30 @@ export const ItemListContainer = ({ text }) => {
     useEffect(() => {
         const db = getFirestore();
 
-        let itemsCollection = [];
+        const allItems = collection(db, "ItemCollection")
 
         if(categoryId) {
-            itemsCollection = query(collection(db, "ItemCollection"), where("item.category", "==", categoryId));           
+            const filteredItems = query(allItems, where("item.category", "==", categoryId));
+            getDocs(filteredItems)
+            .then((snapshot) => {
+                if(snapshot.size === 0) {
+                    // Modificar para la entrega final
+                    console.log("No items to show.");
+                }
+                setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+            })
+            .catch(error => console.log(error))
         } else {
-            itemsCollection = collection(db, "ItemCollection");
+            getDocs(allItems)
+            .then((snapshot) => {
+                if(snapshot.size === 0) {
+                    // Modificar para la entrega final
+                    console.log("No items to show.");
+                }
+                setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+            })
+            .catch(error => console.log(error))
         }
-
-
-
-        getDocs(itemsCollection)
-        .then((snapshot) => {
-            setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
-        })
-        .catch(error => console.log(error))
     }, [categoryId])
 
 /*     useEffect(() => {
