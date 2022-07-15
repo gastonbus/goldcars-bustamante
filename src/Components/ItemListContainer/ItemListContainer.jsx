@@ -58,7 +58,7 @@ export const ItemListContainer = ({ text }) => {
     return (
         <section id="itemsContainer">
             { items.length > 0 ? <ItemList items={ items } /> : <Spinner /> }
-            {/*Descomentar cuando sea el momento:
+            {/*Descomentar para entrega final:
             <p id="listContainerText">{ text }</p>
              */}
         </section>

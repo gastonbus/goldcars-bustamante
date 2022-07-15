@@ -2,28 +2,38 @@ import { addDoc, getFirestore, collection } from "firebase/firestore";
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 
-export const PurchaseForm = () => {
+export const PurchaseForm = ({setOrderId}) => {
 
     const {purchaseCart} = useContext(CartContext);
 
-    const [orderId, setOrderId] = useState('');
 
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: ''    
+    });
+
+    const handleInputChange = (event) => {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value
+        })
+    }
 
     const date = new Date();
 
-    const sendOrder = () => {
+    const sendOrder = (event) => {
+        event.preventDefault();
+
         const order = {
             buyer: {
-                name: name, 
-                phone: phone, 
-                email: email 
+                name: formData.name, 
+                phone: formData.phone, 
+                email: formData.email 
             },
             items: purchaseCart, 
             date: date.toISOString(),
-            total: purchaseCart.reduce((accum, currentValue) => accum + currentValue.item.price * currentValue.quantity, 0) //Aca va el valor total de la compra calculado en Cart
+            total: purchaseCart.reduce((accum, currentValue) => accum + currentValue.item.price * currentValue.quantity, 0) 
         }
 
         const db = getFirestore();
@@ -32,20 +42,23 @@ export const PurchaseForm = () => {
 
         addDoc(ordersCollection, order)
             .then(({id}) => setOrderId(id))
-            .catch((error) => console.log(error))
+            .catch((error) => {
+                console.log(error);
+                setOrderId("error");
+            })
     }
 
     return (
         <div>
             <h3>Please complete the following required data to complete your purchase.</h3>
-            <form>
+            <form onSubmit={sendOrder}>
                 <label>Name:</label>
-                <input name="name" onChange={event => setName(event.target.value)}></input>
+                <input type="text" name="name" onChange={handleInputChange}></input>
                 <label>Phone:</label>
-                <input name="phone" onChange={event => setPhone(event.target.value)}></input>
+                <input type="text" name="phone" onChange={handleInputChange}></input>
                 <label>Email:</label>
-                <input name="email" onChange={event => setEmail(event.target.value)}></input>
-                <button onClick={() => sendOrder()}>Confirm Purchase</button>
+                <input type="email" name="email" onChange={handleInputChange}></input>
+                <button type="submit">Confirm Purchase</button>
             </form>
         </div>
     )
