@@ -9,17 +9,15 @@ export const CartContextProvider = ({children}) => {
     const purchaseCart = [...itemsInCart]
 
     const isInCart = (itemId) => {
-        return purchaseCart.some(itemInCart => itemInCart.id === itemId);
+        return purchaseCart.some(itemInCart => itemInCart.item.id === itemId);
     }
 
     /* IMPORTANTE: itemsInCart e itemToAdd tienen la forma {item:{...}, quantity: 1} */
     const addItemToCart = (itemToAdd) => {   
-        
-        if(isInCart(itemToAdd.id)) {
-
+        if(isInCart(itemToAdd.item.id)) {
             //Actualiza la cantidad del item existente
             setItemsInCart(purchaseCart.map(itemInCart => {
-                if (itemInCart.id === itemToAdd.id) {
+                if (itemInCart.item.id === itemToAdd.item.id) {
                     itemInCart.quantity += itemToAdd.quantity;
                 }
                 return itemInCart;
@@ -31,7 +29,7 @@ export const CartContextProvider = ({children}) => {
         }
     }
     const removeItemFromCart = (itemId) => {
-        setItemsInCart(purchaseCart.filter(itemInCart => itemInCart.id !== itemId));
+        setItemsInCart(purchaseCart.filter(itemInCart => itemInCart.item.id !== itemId));
     } 
     
     const clearCart = () => {

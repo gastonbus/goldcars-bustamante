@@ -9,7 +9,7 @@ export const Item = ({id, name, price, stock, image}) => {
             <p id="itemName">{name}</p>
             <p id="itemPrice">Price: U$S {price}</p>
             <Link to={`/item/${id}`} id="itemMoreInfo">More info...</Link>    
-            <p id="itemStock">Stock: {stock} units</p>
-        </article>
+{/*             <p id="itemStock">Stock: {stock} units</p>
+ */}        </article>
     )
 }

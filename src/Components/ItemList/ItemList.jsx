@@ -4,14 +4,14 @@ import { Item } from "../Item/Item";
 export const ItemList = ({items}) => {
 
     return (
-        items.map(item => {
+        items.map(elem => {
             return <Item 
-                key={item.id} 
-                id={item.id} 
-                image={item.item.image} 
-                name={item.item.name} 
-                price={item.item.price} 
-                stock={item.item.stock} 
+                key={elem.id} 
+                id={elem.id} 
+                image={elem.image} 
+                name={elem.name} 
+                price={elem.price} 
+                stock={elem.stock} 
             />
         }
         )     
