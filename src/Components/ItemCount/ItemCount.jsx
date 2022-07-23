@@ -32,7 +32,7 @@ export const ItemCount = ({stock, initial, onAdd }) => {
             }
         }       
     }
-    
+
     return (
         <div id="itemCounterContainer">
             <div>

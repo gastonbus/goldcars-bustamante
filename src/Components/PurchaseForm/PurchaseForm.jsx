@@ -58,8 +58,6 @@ export const PurchaseForm = () => {
             console.log(error);
             setOrderId("error");
         })
-        
-
     }
     
     if (!orderId) {

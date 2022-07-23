@@ -13,7 +13,6 @@ export const ItemList = ({items}) => {
                 price={elem.price} 
                 stock={elem.stock} 
             />
-        }
-        )     
+        })     
     )
 }

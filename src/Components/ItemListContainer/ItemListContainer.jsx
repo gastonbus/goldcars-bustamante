@@ -23,7 +23,7 @@ export const ItemListContainer = ({ text }) => {
         const allItems = collection(db, "ItemCollection")
 
         if(categoryId) {
-            const filteredItems = query(allItems, where("item.category", "==", categoryId));
+            const filteredItems = query(allItems, where("category", "==", categoryId));
             getDocs(filteredItems)
             .then((snapshot) => {
                 if(snapshot.size === 0) {
