@@ -7,27 +7,31 @@ import { CartContext } from "../../Context/CartContext";
 
 export const NavBar = () => {
 
-    const { purchaseCart } = useContext(CartContext);
+    const { itemsInCart } = useContext(CartContext);
 
     return (
         <nav>
-            <div>
-                <h1>
-                    <Link to="/">Gold Cars</Link>
-                </h1>
-                <ul>
-                    <li>
-                        <Link to="/category/deluxe">Deluxe</Link>
-                    </li>
-                    <li>
-                        <Link to="/category/sport">Sport</Link>
-                    </li>
-                    <li>
-                        <Link to="/category/family">Family</Link>
-                    </li>
-                </ul>
+            <div id="linksContainer">
+                <div>
+                    <h1>
+                        <Link to="/">Gold Cars</Link>
+                    </h1>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <Link to="/category/deluxe">Deluxe</Link>
+                        </li>
+                        <li>
+                            <Link to="/category/sport">Sport</Link>
+                        </li>
+                        <li>
+                            <Link to="/category/family">Family</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            {purchaseCart.length > 0 && <CartWidget />}
+            {itemsInCart.length > 0 && <CartWidget />}
         </nav>
     );
 };

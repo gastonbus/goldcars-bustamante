@@ -5,7 +5,7 @@ import { Spinner } from "../Spinner/Spinner";
 
 export const PurchaseForm = () => {
 
-    const {purchaseCart, clearCart} = useContext(CartContext);
+    const {itemsInCart, clearCart} = useContext(CartContext);
 
     const [orderId, setOrderId] = useState();
 
@@ -34,9 +34,9 @@ export const PurchaseForm = () => {
                 phone: formData.phone, 
                 email: formData.email 
             },
-            items: purchaseCart, 
+            items: itemsInCart, 
             date: date.toISOString(),
-            total: purchaseCart.reduce((accum, currentValue) => accum + currentValue.item.price * currentValue.quantity, 0) 
+            total: itemsInCart.reduce((accum, currentValue) => accum + currentValue.item.price * currentValue.quantity, 0) 
         }
         
         const db = getFirestore();
@@ -46,7 +46,7 @@ export const PurchaseForm = () => {
         addDoc(ordersCollection, order)
         .then(({id}) => {
             setOrderId(id);
-            purchaseCart.forEach(elem => {
+            itemsInCart.forEach(elem => {
                 const itemDoc = doc(db, "ItemCollection", elem.item.id);
                 updateDoc(itemDoc, {stock: elem.item.stock - elem.quantity})
                 .then(() => console.log("Se actualizó el stock del item: ", elem.item.id))
@@ -71,7 +71,7 @@ export const PurchaseForm = () => {
                     <input type="text" name="phone" onChange={handleInputChange}></input>
                     <label>Email:</label>
                     <input type="email" name="email" onChange={handleInputChange}></input>
-                    <button type="submit">Confirm Purchase</button>
+                    <button type="submit" disabled={(!formData.name || !formData.phone || !formData.email) && true}>Confirm Purchase</button>
                 </form>
             </div>
         )

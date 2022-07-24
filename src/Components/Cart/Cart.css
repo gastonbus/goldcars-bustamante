@@ -1,0 +1,20 @@
+#cartTable {
+    display: table;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em;
+}
+
+.cartTableHeaderRow {
+    display: table-row;
+    font-weight: bold;
+    background-color: darkgray;
+}
+
+.cartTableRow {
+    display: table-row;
+}
+
+.cartTableCell {
+    display: table-cell;
+}
+

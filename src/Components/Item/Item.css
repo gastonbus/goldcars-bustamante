@@ -3,10 +3,19 @@
 }
 
 #itemContainer {
-    background: linear-gradient(160deg, #ffffff 40%, #75a4ff 60%);
-    border: 1px solid #bbb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(155deg, #ffffff 40%, #75a4ff 60%);
+    border: 1px solid #bbbbbb;
     border-radius: 2em;
     margin: 15px;
+    width: 260px;
+    height: 360px;
+    padding: 5px 0px;
+}
+
+#itemContainer div {
     text-align: center;
 }
 
@@ -17,6 +26,31 @@
     font-size: 1.5em;
 }
 
-#itemPrice, #itemStock {
+#itemPrice {
+    font-family: 'Quicksand', sans-serif;
     margin: 0px 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #b02222;
+}
+
+#moreInfo {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #b02222;
+    border: none;
+    border-radius: 1.5em;
+    color: #ffffff;
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0px 5px 0px;
+    cursor: pointer;
+}
+
+#itemStock {
+    margin: 0px 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#moreInfo:hover {
+    background-color: #f90404;
 }

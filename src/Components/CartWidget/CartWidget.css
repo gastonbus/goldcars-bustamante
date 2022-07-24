@@ -1,13 +1,33 @@
-nav .cartIcon {
-    display: inline-block;
-    color:white;
-    text-shadow: 2px 2px 2px #555;
+#cartIconContainer {
+    display: flex;
+    align-content: center;
+    top: 0px;
+    bottom: 0px;
+    background-color: #b02222;
+    align-items: center;
+    padding: 10px 16px;
+    margin: 0px;
 }
 
-nav .quantity {
+#cartIconContainer a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+#cartIcon {
+    display: inline-block;
+    color:white;
+}
+
+#cartQuantity {
     display: inline-block;
     position: relative;
-    bottom: 1.3em;
+    bottom: 1em;
     color: white;
     font-weight: bold;
+}
+
+#cartIconContainer:hover {
+    background-color: #f90404;
 }

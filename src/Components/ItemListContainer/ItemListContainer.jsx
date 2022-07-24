@@ -17,7 +17,10 @@ export const ItemListContainer = ({ text }) => {
 
     const [items, setItems] = useState([]);
 
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
+        setLoading(true);
         const db = getFirestore();
 
         const allItems = collection(db, "ItemCollection")
@@ -33,6 +36,7 @@ export const ItemListContainer = ({ text }) => {
                 setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
             })
             .catch(error => console.log(error))
+            .finally(() => setLoading(false))
         } else {
             getDocs(allItems)
             .then((snapshot) => {
@@ -43,6 +47,7 @@ export const ItemListContainer = ({ text }) => {
                 setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
             })
             .catch(error => console.log(error))
+            .finally(() => setLoading(false))
         }
     }, [categoryId])
 
@@ -57,7 +62,7 @@ export const ItemListContainer = ({ text }) => {
 
     return (
         <section id="itemsContainer">
-            { items.length > 0 ? <ItemList items={ items } /> : <Spinner /> }
+            { !loading ? <ItemList items={ items } /> : <Spinner /> }
             {/*Descomentar para entrega final:
             <p id="listContainerText">{ text }</p>
              */}
