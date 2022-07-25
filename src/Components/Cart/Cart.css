@@ -1,7 +1,17 @@
 #cartTable {
     display: table;
-    font-family: 'Quicksand', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
+    margin: 16px auto auto auto;
+}
+
+#cartTable > .cartTableRow:last-child > div{
+    border: none;
+}
+
+#cartTable > .cartTableRow:nth-last-child(2) > div {
+    font-weight: bold;
+    background-color: rgb(247, 247, 247);
 }
 
 .cartTableHeaderRow {
@@ -16,5 +26,74 @@
 
 .cartTableCell {
     display: table-cell;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid gray;
 }
 
+.cartTableRow > div:first-child {
+    text-align: left;
+}
+
+#removeItemButton, #addItemsButton, #resetCartButton, #continueButton {
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#removeItemButton {
+    border: none;
+    background: #b02222;
+    color: white;
+}
+
+#removeItemButton:hover {
+    background: red;
+}
+
+#addItemsButton {
+    background-color: #1ca81c;
+    color: white;
+    border: none;
+}
+
+#addItemsButton:hover {
+    background-color: #17c917;
+}
+
+#resetCartButton {
+    background: none;
+    border: 1px solid red;
+    color: red;
+}
+
+#continueButton {
+    background-color: #005bd5;
+    border: none;
+    color: white;
+}
+
+#continueButton:hover {
+    background-color: #2b87ff;
+}
+
+@media screen and (max-width: 350px) {
+    .cartTableHeaderRow {
+        display: none;
+    }
+    
+    .cartTableRow {
+        display: block;
+        border-bottom: 1px solid gray;
+        text-align: center;
+    }
+    
+    .cartTableCell {
+        display: inline-block;
+        border: none;
+    }
+
+    .cartTableRow > div:nth-child(3) {
+        display: none;
+    }
+}

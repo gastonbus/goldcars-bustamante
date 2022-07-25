@@ -2,6 +2,7 @@ import { addDoc, doc, getFirestore, collection, updateDoc } from "firebase/fires
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { Spinner } from "../Spinner/Spinner";
+import "./PurchaseForm.css";
 
 export const PurchaseForm = () => {
 
@@ -71,7 +72,7 @@ export const PurchaseForm = () => {
                     <input type="text" name="phone" onChange={handleInputChange}></input>
                     <label>Email:</label>
                     <input type="email" name="email" onChange={handleInputChange}></input>
-                    <button type="submit" disabled={(!formData.name || !formData.phone || !formData.email) && true}>Confirm Purchase</button>
+                    <button type="submit" disabled={(!formData.name || !formData.phone || !formData.email) && true}>Confirmar Compra</button>
                 </form>
             </div>
         )

@@ -1,0 +1,22 @@
+#emptyCart {
+    text-align: center;
+    padding: 16px;
+}
+
+#emptyCart > p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#emptyCart > button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: #b02222;
+    border: none;
+    color: white;
+}
+
+#emptyCart > button:hover {
+    background-color: red;
+}

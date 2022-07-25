@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import "./EmptyCart.css";
 
 export const EmptyCart = () => {
 
     const navigate = useNavigate();
 
     return (
-        <div>
-            <p>There is no item in your cart! Please, go back to the landing page to add an item.</p>
-            <button onClick={() => navigate("/", { replace: false })}>Go back</button>    
+        <div id="emptyCart">
+            <p>No hay ningún producto en el carrito! Por favor, volvé a la página inicial para encontrar lo que buscás.</p>
+            <button onClick={() => navigate("/", { replace: false })}>Volver</button>    
         </div>
     )
 
