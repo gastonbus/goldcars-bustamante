@@ -5,7 +5,6 @@ import { Item } from "../Item/Item";
 
 export const ItemList = ({items}) => {
 
-    //Actualizar los stocks según lo que tiene el Cart.
     const {itemsInCart, isInCart} = useContext(CartContext);
 
     return (

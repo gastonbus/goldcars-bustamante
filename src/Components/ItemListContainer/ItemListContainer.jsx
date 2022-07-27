@@ -1,8 +1,6 @@
 import React from "react";
 import "./ItemListContainer.css";
 import { useEffect, useState } from "react";
-// import getItems from "../../utils/itemsPromise";
-// import itemsArray from "../../utils/items";
 import { ItemList } from "../ItemList/ItemList";
 import { Spinner } from "../Spinner/Spinner";
 import { useParams } from "react-router-dom";
@@ -10,10 +8,6 @@ import { collection, getDocs, getFirestore, query, where } from "firebase/firest
 
 export const ItemListContainer = ({ text }) => {
     let { categoryId } = useParams();
-
-    // if (categoryId === undefined) {
-    //     categoryId = "all";
-    // }
 
     const [items, setItems] = useState([]);
 
@@ -30,7 +24,6 @@ export const ItemListContainer = ({ text }) => {
             getDocs(filteredItems)
             .then((snapshot) => {
                 if(snapshot.size === 0) {
-                    // Modificar para la entrega final
                     console.log("Hubo un error al obtener los datos.");
                 }
                 setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
@@ -41,7 +34,6 @@ export const ItemListContainer = ({ text }) => {
             getDocs(allItems)
             .then((snapshot) => {
                 if(snapshot.size === 0) {
-                    // Modificar para la entrega final
                     console.log("Hubo un error al obtener los datos.");
                 }
                 setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
