@@ -7,8 +7,8 @@ import { PurchaseForm } from "../Components/PurchaseForm/PurchaseForm";
 export const Router = () => {
     return (
         <Routes>
-            <Route path="/" element={<ItemListContainer text="Lista de productos"/>}/>
-            <Route path="/category/:categoryId" element={<ItemListContainer text="Lista de productos"/>}/>
+            <Route path="/" element={<ItemListContainer text="Gold Cars tiene los autos de colección más importantes de la industria"/>}/>
+            <Route path="/category/:categoryId" element={<ItemListContainer text="Estás viendo únicamente los productos del tipo "/>}/>
             <Route path="/item/:itemId" element={<ItemDetailContainer />}/>
             <Route path="/cart" element={<Cart />}/>
             <Route path="/form" element={<PurchaseForm />}/>

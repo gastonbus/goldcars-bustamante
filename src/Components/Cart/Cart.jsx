@@ -14,7 +14,7 @@ export const Cart = () => {
             <div id="cartTable">
                 <div className="cartTableHeaderRow">
                     <div className="cartTableCell">Item</div>
-                    <div className="cartTableCell">Cant</div>
+                    <div className="cartTableCell">Cant.</div>
                     <div className="cartTableCell">Precio</div>
                     <div className="cartTableCell">Subtotal</div>
                     <div className="cartTableCell"></div>
@@ -27,8 +27,6 @@ export const Cart = () => {
                             <div className="cartTableCell">${itemInCart.item.price}</div>
                             <div className="cartTableCell">${itemInCart.item.price * itemInCart.quantity}</div>
                             <div className="cartTableCell">
-                                <button id="addItemButton" onClick={() => {}}>+</button>
-                                <button id="substractItemButton" onClick={() => {}}>-</button>
                                 <button id="removeItemButton" onClick={() => removeItemFromCart(itemInCart.item.id)}>Quitar</button>
                                 </div>
                         </div>

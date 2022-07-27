@@ -1,10 +1,13 @@
 import { addDoc, doc, getFirestore, collection, updateDoc } from "firebase/firestore";
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import { Spinner } from "../Spinner/Spinner";
 import "./PurchaseForm.css";
 
 export const PurchaseForm = () => {
+
+    const navigate = useNavigate();
 
     const {itemsInCart, clearCart} = useContext(CartContext);
 
@@ -63,22 +66,32 @@ export const PurchaseForm = () => {
     
     if (!orderId) {
         return (
-            <div>
-                <h3>Please complete the following required data to complete your purchase.</h3>
-                <form onSubmit={sendOrder}>
-                    <label>Name:</label>
-                    <input type="text" name="name" onChange={handleInputChange}></input>
-                    <label>Phone:</label>
-                    <input type="text" name="phone" onChange={handleInputChange}></input>
-                    <label>Email:</label>
-                    <input type="email" name="email" onChange={handleInputChange}></input>
-                    <button type="submit" disabled={(!formData.name || !formData.phone || !formData.email) && true}>Confirmar Compra</button>
+            <div id="formContainer">
+                <h3>Necesitamos los siguientes datos para continuar con la compra:</h3>
+                <form id="purchaseForm" onSubmit={sendOrder}>
+                        <input type="text" name="name" placeholder="Nombre y Apellido" onChange={handleInputChange}></input>    
+                    <div>
+                        <input type="text" name="phone" placeholder="Teléfono" onChange={handleInputChange}></input>
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Email" onChange={handleInputChange}></input>
+                    </div>
+                    <button id="confirmPurchaseButton" type="submit" disabled={(!formData.name || !formData.phone || !formData.email) && true}>Confirmar Compra</button>
                 </form>
             </div>
         )
     } else {
         return orderId === "loading" ? <Spinner /> : 
-            orderId === "error" ? <div>Ha ocurrido un error en el proceso de compra.</div> : 
-                <div>Se ha confirmado su compra con el id <b>{orderId}</b></div>
+            orderId === "error" ? 
+                <div id="errorPage">
+                    <p>Oops! Lamentamos informarte que ha ocurrido un error. Intentalo de nuevo más tarde.Disculpá las molestias.</p>
+                </div> : 
+                <div id="purchaseConfirmedPage">
+                    <p id="congratsText">FELICITACIONES!</p>
+                    <p>Tu compra se realizó exitosamente con el ID:</p> 
+                    <p id="orderIdText">{orderId}</p>
+                    <p>No lo pierdas! En pocos días te estaremos contactando para coordinar el envío de tu compra y te lo pediremos.</p>
+                    <button id="goToMainPageButton" onClick={() => navigate("/", { replace: false })}>Página Principal</button>
+                </div>
     }
 }

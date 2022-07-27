@@ -1,14 +1,14 @@
-#listContainerText {
-    font-size: 24px;
-    font-weight: bold;
+#itemListContainer {
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
+}
+
+#itemListContainer > p {
+    font-size: 16px;
+    margin: 15px;
 }
 
 #itemsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
 }

@@ -1,0 +1,70 @@
+#formContainer {
+    text-align: center;
+}
+
+#formContainer > h3 {
+    margin: 15px;
+}
+
+#purchaseForm input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#purchaseForm input::placeholder {
+    color: #cccccc;
+}
+
+#confirmPurchaseButton {
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #005bd5;
+    border: none;
+    color: white;
+}
+
+#confirmPurchaseButton:disabled {
+    background-color: #8aacda;
+}
+
+#confirmPurchaseButton:hover {
+    background-color: #2b87ff;
+}
+
+#purchaseConfirmedPage {
+    text-align: center;
+    margin: 15px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#congratsText {
+    color: #005bd5;
+    font-weight: bold;
+    font-size: 1.8em;
+    margin: 10px 5px;
+}
+
+#orderIdText {
+    color: #1ca81c;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 5px;
+}
+
+#goToMainPageButton {
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #b02222;
+    border: none;
+    color: white;
+    margin-top: 15px;
+}
+
+#goToMainPageButton:hover {
+    background-color: red;
+}

@@ -31,7 +31,7 @@ export const ItemListContainer = ({ text }) => {
             .then((snapshot) => {
                 if(snapshot.size === 0) {
                     // Modificar para la entrega final
-                    console.log("No items to show.");
+                    console.log("Hubo un error al obtener los datos.");
                 }
                 setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
             })
@@ -42,7 +42,7 @@ export const ItemListContainer = ({ text }) => {
             .then((snapshot) => {
                 if(snapshot.size === 0) {
                     // Modificar para la entrega final
-                    console.log("No items to show.");
+                    console.log("Hubo un error al obtener los datos.");
                 }
                 setItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})))
             })
@@ -51,21 +51,12 @@ export const ItemListContainer = ({ text }) => {
         }
     }, [categoryId])
 
-/*     useEffect(() => {
-        const filterItems = (items) => {
-            return categoryId !== "all" ? items.filter(item => item.category === categoryId) : items
-        }
-        getItems(itemsArray)
-        .then(data => setItems(filterItems(data)))
-        .catch(error => console.log(error))
-    }, [categoryId]) */
-
     return (
-        <section id="itemsContainer">
-            { !loading ? <ItemList items={ items } /> : <Spinner /> }
-            {/*Descomentar para entrega final:
-            <p id="listContainerText">{ text }</p>
-             */}
+        <section id="itemListContainer">
+            { <p>{ text } <b>{categoryId}</b></p> }
+            <div id="itemsContainer">
+                { !loading ? <ItemList items={ items } /> : <Spinner /> }
+            </div>
         </section>
     )
 }

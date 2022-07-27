@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Gold Cars eCommerce
+_This site was created only with educational purposes and it does NOT have commercial purposes. This project consists in creating a Single Page Application (SPA), simulating an eCommerce of any kind of products (in this case, miniature collection cars), giving the user the possibility of selecting how many units of each he wants to buy and giving him the posibility of viewing a purchase cart with the list of products he is nearly to buy. At the same time, this site uses Firebase as a backend service to receive 'get' (with and without filters), 'add' and 'update' requests. The images used were obtained from https://hw-shopping.de/ and they are loaded directly from that site, so if you experience some image loading error it is possible that they were removed from the server._ 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este sitio fue creado únicamente con **fines educativos** para aprender React.js y **no tiene un fin comercial**. El proyecto consiste en crear una Aplicación de Página Única (SPA por sus siglas en inglés), simulando un eCommerce de cualquier tipo de productos (en este caso, de autos de colección miniatura), dándole al usuario la posibilidad de seleccionar la cantidad de unidades que quiere comprar de cada uno de ellos y permitiéndole ver en un carrito de compras un resumen de los productos seleccionados. A su vez, este sitio utiliza Firebase como backend, sobre el cual se realizan consultas de tipo 'get' (con y sin filtros), 'add' y 'update'. Las imagenes utilizadas fueron obtenidas de https://hw-shopping.de/ y se cargan directamente desde ese sitio, por lo que si experimenta errores en la carga de las mismas, puede deberse a que fueron removidas del servidor.
 
-## Available Scripts
+## Built with / Construido con 🛠️
+_The purpose of this project was not only to learn in a practical way to use React.js, but also to review and practice the use of pure CSS, so no style library was used. Only the following dependencies were used:_ 
 
-In the project directory, you can run:
+La finalidad de este proyecto no sólo fue aprender en forma práctica a utilizar React.js, sino tambien repasar y practicar el uso de CSS puro, por lo que no se usó ninguna librería de estilos. Sólo se utilizaron las siguientes dependencias:
 
-### `npm start`
+* [React.js 18.1.0](https://es.reactjs.org/)  - _Main library for the develop of the application._ / Librería principal para el desarrollo de la aplicación.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [React Icons 4.4.0](https://react-icons.github.io/react-icons/) - _Dependency for icons usage._ / Dependencia para utilización de íconos. /  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* [React Router v6.3.0](https://reactrouter.com/) - _Dependency for routing management_ / Dependencia para la gestión del enrutamiento.
 
-### `npm test`
+* [Firebase 9.8.4](https://firebase.google.com/?hl=es-419) - _Dependency that provides the application with a backend service._ / Dependencia que provee de un servicio de backend a la aplicación.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pre-requisites / Pre-requisitos 📋
+_In order to run the application in the local environment, it is necessary to have Node.js installed._
 
-### `npm run build`
+Para poder correr la aplicación en el ambiente local es necesario tener instalado Node.js:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+https://nodejs.org/es/
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation / Instalación 🚀
+_In order to download the project it is necessary to run the following command in the git terminal:_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para descargar el proyecto es necesario ingresar a la consola de git y escribir el siguiente comando:
 
-### `npm run eject`
+```
+git clone https://github.com/gastonbus/goldcars-bustamante.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+_Once the repository has been cloned in the previous step, you must enter the terminal, go to the directory where the cloned repository is located, and execute the following commands to be able to deploy the project in the local environment:_
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Una vez clonado el repositorio en el paso anterior, hay que ingresar a la terminal, posicionarse en el directorio donde se encuentra el repositorio clonado y ejecutar los siguientes comandos para poder hacer un deploy del proyecto en el ambiente local:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm start
+```
 
-## Learn More
+## Usage / Uso ⚙️
+_By default, the project will be started at http://localhost:3000. It is important to clarify that the port number may vary depending on the conditions of the equipment at the time of execution. However, the terminal will return this information at the end of "npm start" execution._
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Predeterminadamente, el proyecto se levantará en http://localhost:3000. Es importante aclarar que el numero de puerto puede variar según las condiciones del equipo en el momento de la ejecución. Sin embargo, la consola arrojará esta información al terminar de ejecutar el "npm start".
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## About the author / Sobre el autor ✒️
+* **Gastón Bustamante** -  _*My first site built using React.js*_ / *Mi primer sitio construido con React.js* - [gastonbus](https://github.com/gastonbus)
